@@ -221,7 +221,7 @@ export default function Contact() {
       {/* Map */}
       <section className="h-96 w-full bg-gray-200">
         <iframe
-          src="https://maps.app.goo.gl/8KvngLojpVxCaJ6cA"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d67818.26033395258!2d43.84846524274374!3d26.4137868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x157f57e58bbf7481%3A0xcc6071e78d70cfeb!2z2LTYsdmD2Kkg2KPZiNio2KfZhCDYp9mE2KrZgtmG2YrYqSDZhNmE2KfYqti12KfZhNin2Kog2YjYqtmC2YbZitipINin2YTZhdi52YTZiNmF2KfYqg!5e1!3m2!1sen!2ssa!4v1773613315632!5m2!1sen!2ssa"
           width="100%"
           height="100%"
           style={{ border: 0 }}

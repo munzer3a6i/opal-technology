@@ -27,7 +27,7 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -79,14 +79,14 @@ export default function Contact() {
           <img src="https://picsum.photos/seed/contact-header/1920/600" alt="Header Background" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
             {language === 'en' ? 'Contact Us' : 'اتصل بنا'}
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -101,7 +101,7 @@ export default function Contact() {
       <section className="py-24 bg-[var(--color-bg-light)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-            
+
             {/* Contact Info */}
             <div className="lg:col-span-1 space-y-8">
               <motion.div
@@ -111,7 +111,7 @@ export default function Contact() {
                 <h2 className="text-3xl font-bold text-[var(--color-primary)] mb-8">
                   {language === 'en' ? 'Get in Touch' : 'تواصل معنا'}
                 </h2>
-                
+
                 <div className="space-y-6">
                   {contactInfo.map((info, idx) => {
                     const Icon = info.icon;
@@ -153,7 +153,7 @@ export default function Contact() {
                 <h2 className="text-3xl font-bold text-[var(--color-primary)] mb-8">
                   {language === 'en' ? 'Send us a Message' : 'أرسل لنا رسالة'}
                 </h2>
-                
+
                 {submitSuccess ? (
                   <div className="bg-green-50 border border-green-200 text-green-800 p-6 rounded-2xl text-center">
                     <h3 className="text-2xl font-bold mb-2">{language === 'en' ? 'Thank You!' : 'شكراً لك!'}</h3>
@@ -196,8 +196,8 @@ export default function Contact() {
                       <label className="block text-sm font-medium text-gray-700 mb-2">{language === 'en' ? 'Message *' : 'الرسالة *'}</label>
                       <textarea required name="message" value={formData.message} onChange={handleChange} rows={5} className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent outline-none transition-all resize-none"></textarea>
                     </div>
-                    <button 
-                      type="submit" 
+                    <button
+                      type="submit"
                       disabled={isSubmitting}
                       className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center gap-3 disabled:opacity-70"
                     >
@@ -220,13 +220,13 @@ export default function Contact() {
 
       {/* Map */}
       <section className="h-96 w-full bg-gray-200">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113645.1953289943!2d43.9575459!3d26.3350106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x157f5963b6038421%3A0x6a0a09e0a811796c!2sBuraidah%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1709000000000!5m2!1sen!2s" 
-          width="100%" 
-          height="100%" 
-          style={{ border: 0 }} 
-          allowFullScreen 
-          loading="lazy" 
+        <iframe
+          src="https://maps.app.goo.gl/8KvngLojpVxCaJ6cA"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           title="Opal Technology Location"
         ></iframe>

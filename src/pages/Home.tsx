@@ -6,6 +6,16 @@ import projectImage1 from '../assets/project.png';
 import projectImage2 from '../assets/project.png';
 import projectImage3 from '../assets/project.png';
 import companyImage from '../assets/companyImage.jpg';
+import client1 from '../assets/Saudi_Ministry_of_Education_Logo.png';
+import client2 from '../assets/Saudi_Ministry_of_Health_Logo.png';
+import client3 from '../assets/qassimLogo.png';
+import client4 from '../assets/وزارة_الرياضة_السعودية.svg.png';
+import client5 from '../assets/Saudi_Ministry_of_Defense_Logo.png';
+import client6 from '../assets/جامعة القصيم.svg';
+import client7 from '../assets/جامعة المجمعة.png';
+import client8 from '../assets/MHOH-logo.png';
+import client9 from '../assets/وزارة_العدل_السعودية.png';
+
 import {
   ShieldCheck,
   Cctv,
@@ -70,6 +80,18 @@ export default function Home() {
       image: projectImage3,
       systems: language === 'en' ? 'Smart Systems, Network, CCTV' : 'الأنظمة الذكية، الشبكات، كاميرات المراقبة'
     }
+  ];
+
+  const customers = [
+    { name: 'Ministry of Health', logo: client1 },
+    { name: 'Ministry of Education', logo: client2 },
+    { name: 'Ministry of Justice', logo: client3 },
+    { name: 'Saudi Aramco', logo: client4 },
+    { name: 'SABIC', logo: client5 },
+    { name: 'STC', logo: client6 },
+    { name: 'Al Rajhi Bank', logo: client7 },
+    { name: 'Al Rajhi Bank', logo: client8 },
+    { name: 'Al Rajhi Bank', logo: client9 },
   ];
 
   return (
@@ -287,6 +309,45 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Customers / Partners */}
+      <section className="py-20 bg-white overflow-hidden border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-[var(--color-primary)]">
+              {language === 'en' ? 'Our Trusted Clients' : 'عملائنا الموثوقين'}
+            </h2>
+            <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+              {language === 'en'
+                ? 'We are proud to serve leading organizations across various sectors in Saudi Arabia.'
+                : 'نفخر بخدمة كبرى المؤسسات والجهات الحكومية والخاصة في المملكة العربية السعودية.'}
+            </p>
+          </div>
+        </div>
+
+        <div className="relative w-full">
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+          <div className="flex overflow-hidden group">
+            <div className={`flex gap-8 items-center min-w-[200%] px-4 group-hover:[animation-play-state:paused] ${isRtl ? 'animate-marquee-rtl' : 'animate-marquee'}`}>
+              {[...customers, ...customers, ...customers, ...customers].map((customer, index) => (
+                <div
+                  key={index}
+                  className="w-[200px] sm:w-[250px] flex-shrink-0 flex items-center justify-center p-6 bg-[var(--color-bg-light)] rounded-xl border border-gray-100 grayscale hover:grayscale-0 transition-all duration-300 hover:shadow-md cursor-pointer h-32"
+                >
+                  <img
+                    src={customer.logo}
+                    alt={customer.name}
+                    className="max-w-full max-h-full object-contain"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

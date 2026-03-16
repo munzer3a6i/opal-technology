@@ -1,4 +1,6 @@
+import React from 'react';
 import { motion } from 'framer-motion';
+import { BeamsBackground } from '@/components/ui/beams-background';
 import { useLanguage } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
 import hero from '../assets/heroimage.png';
@@ -97,23 +99,14 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-[var(--color-primary)] text-white">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-black/50 z-10"></div>
-          <img
-            src={hero}
-            alt="Hero Background"
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
-        </div>
-
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative h-screen min-h-[600px] flex items-center justify-center">
+        <BeamsBackground className="absolute inset-0 z-0" intensity="medium" />
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-20">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white"
           >
             {t('hero.title')}
           </motion.h1>
@@ -243,6 +236,8 @@ export default function Home() {
                   alt="Server Room"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="absolute -bottom-8 -left-8 rtl:-right-8 rtl:-left-auto bg-white p-6 rounded-xl shadow-xl max-w-xs hidden md:block">
@@ -295,6 +290,8 @@ export default function Home() {
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute top-4 left-4 rtl:right-4 rtl:left-auto bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[var(--color-primary)]">
                     {project.client}
@@ -344,6 +341,8 @@ export default function Home() {
                     alt={customer.name}
                     className="max-w-full max-h-full object-contain"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               ))}
